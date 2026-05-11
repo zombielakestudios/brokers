@@ -1,0 +1,7 @@
+# Local Review Assets
+_review/
+
+# Local Settings
+settings.local.json
+.DS_Store
+Thumbs.db
