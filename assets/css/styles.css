@@ -1055,10 +1055,34 @@ p.lede{
   background: transparent !important;
 }
 .units--tri .unit{
-  border: 1px solid var(--line-soft) !important;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(7,20,43,.04);
+  background: var(--cb-blue) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(1,33,105,.18);
+  padding: clamp(2rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.units--tri .unit__num,
+.units--tri .unit__name,
+.units--tri .unit__price,
+.units--tri .unit__spec b,
+.units--tri .unit__spec span,
+.units--tri .unit__benefits li{
+  color: var(--white) !important;
+}
+.units--tri .unit__head,
+.units--tri .unit__specs,
+.units--tri .unit__benefits li{
+  border-color: rgba(255,255,255,.15) !important;
+}
+.units--tri .unit__media{
+  background: var(--white);
   padding: 1rem;
+  border-radius: 4px;
+  margin-top: auto;
 }
 @media (max-width: 1240px){
   .units--tri{ 
