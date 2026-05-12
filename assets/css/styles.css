@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    COLDWELL BANKER PRIME GROUP
    Estricto a Manual de Identidad 2025
    Responsive: 320px → 3440px ultrawide
@@ -1048,6 +1048,12 @@ p.lede{
   border-top: 1px solid var(--cb-blue);
   border-left: 1px solid var(--cb-blue);
 }
+.units--tri{
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1240px){
+  .units--tri{ grid-template-columns: repeat(2, 1fr); }
+}
 .unit{
   background: var(--white);
   border-right: 1px solid var(--cb-blue);
@@ -1517,10 +1523,10 @@ h1,h2,h3,h4{ letter-spacing: 0; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 46%, rgba(2,8,20,.42) 100%);
+  background: transparent !important;
 }
 .hero__plate img{
-  filter: saturate(.84) contrast(1.08) brightness(.88);
+  filter: none !important;
 }
 .hero__plate__caption{
   color: rgba(255,255,255,.92);
@@ -2589,8 +2595,7 @@ body > .section::before{
   opacity: .78;
 }
 body > .section:nth-of-type(odd){
-  background:
-    linear-gradient(180deg, rgba(240,245,251,.96), #fff 42%);
+  background: var(--white);
 }
 body > .section.section--tight{
   padding-block: clamp(3.5rem, 6vw, 6.5rem);
@@ -2634,7 +2639,7 @@ body > .section.section--tight{
 .location{
   border-radius: 0;
   border: 1px solid rgba(1,33,105,.12);
-  background: rgba(255,255,255,.86);
+  background: var(--white);
 }
 .manifesto__inner{
   box-shadow: 0 26px 70px rgba(7,20,43,.10);
