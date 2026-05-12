@@ -2979,39 +2979,25 @@ h1, h2, h3, .listing__title, .feature__title, .chapter__title {
 
 /* Apex Alignment Overrides for Portafolio & Tipologías */
 /* Remove remaining gradients and force absolute flush-left alignment */
-.listing, .unit {
+.listing {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
-.listing__head, .listing__specs,
-.unit__head, .unit__body {
+.listing__head, .listing__specs {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.listing__title, .listing__loc, .listing__price,
-.unit__title, .unit__loc, .unit__price {
+.listing__title, .listing__loc, .listing__price {
   text-align: left !important;
   margin-left: 0 !important;
 }
-.unit__body {
-  padding-bottom: 0 !important;
-}
-.listing__media, .unit__media {
+.listing__media {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
   border-radius: 0 !important;
   margin-left: 0 !important;
-}
-.unit__specs, .unit__spec {
-  background: transparent !important;
-}
-.unit__specs {
-  border-color: var(--line-soft) !important;
-}
-.unit__spec b {
-  padding-left: 0 !important;
 }
 
 /* =========================================================
