@@ -1044,17 +1044,13 @@ p.lede{
 .units{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--cb-blue);
-  border-left: 1px solid var(--cb-blue);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  border: none !important;
 }
 .units--tri{
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  border: none !important;
-  background: transparent !important;
 }
-.units--tri .unit{
+.unit{
   background: var(--cb-blue) !important;
   color: var(--white) !important;
   border: none !important;
@@ -1064,22 +1060,19 @@ p.lede{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  transition: transform .5s var(--ease);
 }
-.units--tri .unit__num,
-.units--tri .unit__name,
-.units--tri .unit__price,
-.units--tri .unit__spec b,
-.units--tri .unit__spec span,
-.units--tri .unit__benefits li{
+.unit:hover{
+  transform: translateY(-5px);
+}
+.unit__num, .unit__name, .unit__price, .unit__spec b, .unit__spec span, .unit__benefits li{
   color: var(--white) !important;
 }
-.units--tri .unit__head,
-.units--tri .unit__specs,
-.units--tri .unit__benefits li{
+.unit__head, .unit__specs, .unit__benefits li{
   border-color: rgba(255,255,255,.15) !important;
 }
-
-.units--tri .unit__media{
+.unit__media{
   background: var(--white);
   padding: 1rem;
   border-radius: 4px;
@@ -1087,21 +1080,23 @@ p.lede{
   width: 100%;
 }
 @media (max-width: 1240px){
-  .units--tri{ 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 1.5rem;
-  }
+  .units, .units--tri{ grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
-.unit{
-  background: var(--white);
-  border-right: 1px solid var(--cb-blue);
-  border-bottom: 1px solid var(--cb-blue);
+@media (max-width: 880px){
+  .units, .units--tri{ grid-template-columns: 1fr; }
+}
+.unit__head{
+  padding: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.unit__body{
+  padding: 0;
   display: grid;
-  grid-template-rows: auto auto 1fr;
-  position: relative;
-  transition: background .5s var(--ease);
+  gap: 1.2rem;
 }
-.unit:hover{ background: var(--bg-soft); }
 .unit__media{ aspect-ratio: 16/10; overflow: hidden; }
 .unit__media img{
   width:100%; height:100%; object-fit:cover;
@@ -2910,20 +2905,20 @@ h1, h2, h3, .listing__title, .feature__title, .chapter__title {
   padding-right: var(--bleed) !important;
 }
 
-.listing, .unit {
+.listing {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
 
-.listing__head, .listing__specs, .unit__head, .unit__body {
+.listing__head, .listing__specs {
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-left: 0 !important;
 }
 
-.listing__title, .listing__loc, .listing__price, .unit__title, .unit__loc, .unit__price {
+.listing__title, .listing__loc, .listing__price {
   text-align: left !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
@@ -2934,7 +2929,7 @@ h1, h2, h3, .listing__title, .feature__title, .chapter__title {
   background-image: none !important;
 }
 
-.feature, .listing, .unit, .dev-card, .amenity, .chapter {
+.feature, .listing, .dev-card, .amenity, .chapter {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -2943,21 +2938,18 @@ h1, h2, h3, .listing__title, .feature__title, .chapter__title {
   padding-right: 0 !important;
 }
 
-.feature__media, .listing__media, .unit__media, .dev-card__media {
+.feature__media, .listing__media, .dev-card__media {
   border-radius: 0 !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-.feature__title, .listing__title, .unit__title {
+.feature__title, .listing__title {
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
 
-.unit__specs, .unit__spec {
-  background: transparent !important;
-  border: none !important;
-}
+
 
 /* Restore 3-column balance to Hero/Dev-Hero footers */
 .hero__bottom, .dev-hero__top {
@@ -3001,7 +2993,6 @@ h1, h2, h3, .listing__title, .feature__title, .chapter__title {
 .unit__title, .unit__loc, .unit__price {
   text-align: left !important;
   margin-left: 0 !important;
-  padding-left: 0 !important;
 }
 .unit__body {
   padding-bottom: 0 !important;
