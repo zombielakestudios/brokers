@@ -1060,7 +1060,7 @@ p.lede{
   border: none !important;
   border-radius: 8px;
   box-shadow: 0 20px 50px rgba(1,33,105,.18);
-  padding: clamp(2rem, 3vw, 3rem);
+  padding: 3rem !important;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -1078,11 +1078,13 @@ p.lede{
 .units--tri .unit__benefits li{
   border-color: rgba(255,255,255,.15) !important;
 }
+
 .units--tri .unit__media{
   background: var(--white);
   padding: 1rem;
   border-radius: 4px;
   margin-top: auto;
+  width: 100%;
 }
 @media (max-width: 1240px){
   .units--tri{ 
